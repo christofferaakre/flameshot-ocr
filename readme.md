@@ -18,11 +18,12 @@ executing the following commands:
     2. `sudo ln -s ~/bin/flameshot-ocr flameshot-ocr`
     2. `sudo ln -s ~/bin/yomichan-search yomichan-search`
 4. Make sure that you have Yomichan Search set up as  Chrome/chromium app (not just extension)
-5. Modify the line in the `yomichan-search` script that reads<br>
+5. Make sure that you have `Clipboard monitor` turned on in Yomichan Search.
+6. Modify the line in the `yomichan-search` script that reads<br>
     `/opt/google/chrome/google-chrome --profile-directory=Default --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi`:
     1. Replace the path to `google-chrome` with the path to your chromium browser if you don't use Google Chrome
     2. Replace the app-id with the app-id for your yomichan search app.
-6. Replace the hardoded line `/home/negosaki/yomichan-search` with the absolute
+7. Replace the hardoded line `/home/negosaki/yomichan-search` with the absolute
 path to the `yomichan-search`, which should be `/home/yourUsername/yomichan-search`
 if you followed the instructions above. This path needs to be absolute, not relative
     as otherwise it breaks for ubuntu keyboard shortcuts.
