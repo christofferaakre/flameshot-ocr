@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# This script uses flameshot to interactively
+# take a screenshot, then passes that screenshot
+# into tesseract to perform ocr, and copies
+# the result of the ocr to your clipboard
+# Then opens yomichan search or focuses it if
+# it is already open
+
+function usage() {
+    echo "Usage: flameshot-ocr [language]"
+}
+
+if [[ "$#" -eq 0 ]];then
+        echo "No arguments specified."
+        usage
+        exit 1
+fi
+
+function ocr() {
+
+filename=$1
+lang=$2
+outfile="/tmp/tesseract-output"
+
+tesseract "$1" $outfile -l "$2"
+cat "$outfile".txt
+}
+
+save_path="/tmp/flameshot-screenshot.png"
+lang=$1
+
+flameshot gui -r > "$save_path"
+output=$(ocr "$save_path" "$lang")
+echo "$output"
+echo "$output" | /usr/bin/xclip -selection clipboard
+/home/negosaki/bin/yomichan-search
+exit 0

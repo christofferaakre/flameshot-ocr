@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+# if yomichan search is already open, switch to
+# it. Else, open yomichan serach.
+# Make a keyboard shortcut to this bash script
+# for a very convenient yomichan serach experience
+# Requires yomichan search to be set up as a chrome app
+
+if [[ $(xdotool search yomichan)  ]]; then
+    xdotool search yomichan windowactivate
+else
+    /opt/google/chrome/google-chrome --profile-directory=Default --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi
+fi
