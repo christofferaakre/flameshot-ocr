@@ -23,7 +23,7 @@ executing the following commands:
     `/opt/google/chrome/google-chrome --profile-directory=Default --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi`:
     1. Replace the path to `google-chrome` with the path to your chromium browser if you don't use Google Chrome
     2. Replace the app-id with the app-id for your yomichan search app.
-7. Replace the hardoded line `/home/negosaki/yomichan-search` with the absolute
+7. Replace the hardoded line `/home/negosaki/bin/yomichan-search` with the absolute
 path to the `yomichan-search`, which should be `/home/yourUsername/yomichan-search`
 if you followed the instructions above. This path needs to be absolute, not relative
     as otherwise it breaks for ubuntu keyboard shortcuts.
