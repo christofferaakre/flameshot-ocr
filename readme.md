@@ -11,6 +11,7 @@ installed. Fast, lightweight, and uses industry-leading OCR software
 ### Linux
 1. Clone the repo: `git clone https://github.com/christofferaakre/flameshot-ocr.git`
 2. Install dependencies either using the provided `install.sh` script
+(if you are on a Debian based distro)
 or manually
 3. Add the `flameshot-ocr` script to your path, for example by
 executing the following commands:
