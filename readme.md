@@ -32,12 +32,6 @@ if you followed the instructions above. This path needs to be absolute, not rela
 to the directory that you will monitor with `manga_ocr`
 
 #### Install dependencies using install script:
-Note that the install script by default installs
-tesseract dependencies specific to japanese; if you
-want to use `flameshot-ocr` for a different language, you
-will need to change the `tesseract-ocr-jpn` and `tesseract-ocr-jpn-vert`
-packages to the correct ones for your target language, or
-install these dependencies yourself.
 1. `cd flameshot-ocr`
 2. `chmod +x install.sh`
 3. `sudo ./install.sh`
