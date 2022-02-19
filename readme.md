@@ -4,8 +4,8 @@
 `flameshot-ocr` is an open source tool to quickly OCR and look up
 text. It will look up text in your yomichan search app, so it
 respects all dictionaries/frequency lists etc. that you already have
-installed. Fast, lightweight, and uses industry-leading OCR software
-(`tesseract`).
+installed. Fast, lightweight, and uses [manga-ocr](https://github.com/kha-white/manga-ocr)
+for OCR.
 
 ## Installation
 ### Linux
@@ -28,6 +28,8 @@ executing the following commands:
 path to the `yomichan-search`, which should be `/home/yourUsername/yomichan-search`
 if you followed the instructions above. This path needs to be absolute, not relative
     as otherwise it breaks for ubuntu keyboard shortcuts.
+8. Replace the hardcoded `save_path` directory with the absolute path
+to the directory that you will monitor with `manga_ocr`
 
 #### Install dependencies using install script:
 Note that the install script by default installs
@@ -41,9 +43,8 @@ install these dependencies yourself.
 3. `sudo ./install.sh`
 #### Install dependencies manually:
 Install the following dependencies in any way you see fit:
-* `tesseract` and the required language-specific tesseract packages (`tesseract` need to be in your system path)
+* `manga_ocr` and the required language-specific tesseract packages (`tesseract` need to be in your system path)
 * `flameshot` (needs to be in system path)
-* `xclip` (needs to be in system path)
 * `xdotool` (needs to be in system path)
 ### MacOS
 No support currently
@@ -55,11 +56,10 @@ refer to the Linux installation instructions.
 ## Why no Windows/MacOS support?
 Currently this project is only supported on Linux. The dependencies used are:
 * `flameshot` (Windows/MacOS/Linux support)
-* `tesseract` (Windows/MacOS/Linux support)
-* `xclip` (Only Linux suport as far as I am aware)
+* `manga_ocr` (Windows/MacOS/Linux support)
 * `xdotool` (Only Linux support as far as I am aware)
 
-`xclip` and `xdotool` are used in pretty simple ways so could
+`xdotool` is only used to focus the yomichan search window so could be
 easily be swapped out for Windows/MacOS compatible alternatives.
 Also, unix specific paths like `/usr/bin` and `/tmp` are used,
 and these do not exist on Windows (although they do on MacOS). However,
@@ -69,16 +69,16 @@ supported on Windows/MacOS.
 I am not familiar with Windows/MacOS, but if someone else
 wants to open a pull request and merge in Windows/MacOS compatible versions,
 I'll happily accept the pull request.
-## Usage
-Run the script like this:
-`./flameshot-ocr [language]`. For example, if you are
-learning Japanese, you can bind the following two commands
-to two separate keyboard shortcuts:
-* `flameshot-ocr jpn`
-* `flameshot-ocr jpn_vert`
 
-For example, I have the first command mapped to `Alt + z` and the second
-to `Alt + x`. So if I am reading a manga and want to look something up, I
+## Usage
+Before attempting to run the script, make sure you have `manga_ocr`
+running in the backround, monitoring the directory that you indicated
+with the `save_path` variable in the `flameshot-ocr` script.
+
+Run the script like this: `yomichan-search` from the terminal. Bind
+this command to a keyboard shortcut for easy access. For example,
+I have the script bound to `Alt + x`. So, when I am for example,
+reading a manga and want to ocr and look up something, I
 simply do the following:
 1. Press `Alt + x`
 2. Crop my region of choice

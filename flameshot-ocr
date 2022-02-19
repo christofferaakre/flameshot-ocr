@@ -1,37 +1,20 @@
 #!/usr/bin/env bash
 # This script uses flameshot to interactively
-# take a screenshot, then passes that screenshot
-# into tesseract to perform ocr, and copies
-# the result of the ocr to your clipboard
+# take a screenshot. You should have manga-ocr running
+# in the backgorund, monitoring the right directory
+
 # Then opens yomichan search or focuses it if
 # it is already open
 
 function usage() {
-    echo "Usage: flameshot-ocr [language]"
+    echo "Usage: flameshot-ocr"
 }
 
-if [[ "$#" -eq 0 ]];then
-        echo "No arguments specified."
-        usage
-        exit 1
-fi
-
-function ocr() {
-
-filename=$1
-lang=$2
-outfile="/tmp/tesseract-output"
-
-tesseract "$1" $outfile -l "$2"
-cat "$outfile".txt
-}
-
-save_path="/tmp/flameshot-screenshot.png"
-lang=$1
+# directory that you are monitoring with manga-ocr
+save_path="/home/negosaki/Pictures/ocr/flameshot-screenshot.png"
 
 flameshot gui -r > "$save_path"
-output=$(ocr "$save_path" "$lang")
-echo "$output"
-echo "$output" | /usr/bin/xclip -selection clipboard
+sleep 0.5
+# absolute path to your yomichan-search script (the script in this repo)
 /home/negosaki/bin/yomichan-search
 exit 0
