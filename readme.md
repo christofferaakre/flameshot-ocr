@@ -7,6 +7,10 @@ respects all dictionaries/frequency lists etc. that you already have
 installed. Fast, lightweight, and uses industry-leading OCR software
 (`tesseract`).
 
+**Note: This is an old version of `flameshot-ocr` that
+uses tesseract. I recommend instead using the new version
+which instead uses `manga_ocr` for much better results.**
+
 ## Installation
 ### Linux
 1. Clone the repo: `git clone https://github.com/christofferaakre/flameshot-ocr.git`
