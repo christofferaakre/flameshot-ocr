@@ -8,5 +8,7 @@
 if [[ $(xdotool search yomichan)  ]]; then
     xdotool search yomichan windowactivate
 else
-    /opt/google/chrome/google-chrome --profile-directory=Default --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi
+    chromium "--profile-directory=Profile 2" --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi
 fi
+
+
