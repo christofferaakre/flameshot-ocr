@@ -24,7 +24,7 @@ executing the following commands:
     `/opt/google/chrome/google-chrome --profile-directory=Default --app-id=dmlhnpobnomcmidkoijomppdlpfkedmi`:
     1. Replace the path to `google-chrome` with the path to your chromium browser if you don't use Google Chrome
     2. Replace the app-id with the app-id for your yomichan search app.
-7. Replace the hardoded line `/home/negosaki/bin/yomichan-search` with the absolute
+7. Replace the hardcoded line `/home/negosaki/bin/yomichan-search` with the absolute
 path to the `yomichan-search`, which should be `/home/yourUsername/yomichan-search`
 if you followed the instructions above. This path needs to be absolute, not relative
     as otherwise it breaks for ubuntu keyboard shortcuts.
@@ -43,7 +43,7 @@ Install the following dependencies in any way you see fit:
 ### MacOS
 No support currently
 ### Windows
-No suport for running natively on windows currently,
+No support for running natively on windows currently,
 but you can install [WSL (Windows Subsystem for Linux)](https://docs.microsoft.com/en-us/windows/wsl/install)
 and install/run the script from there. So, install WSL and then
 refer to the Linux installation instructions.
@@ -66,7 +66,7 @@ I'll happily accept the pull request.
 
 ## Usage
 Before attempting to run the script, make sure you have `manga_ocr`
-running in the backround, monitoring the directory that you indicated
+running in the background, monitoring the directory that you indicated
 with the `save_path` variable in the `flameshot-ocr` script.
 
 Run the script like this: `yomichan-search` from the terminal. Bind
